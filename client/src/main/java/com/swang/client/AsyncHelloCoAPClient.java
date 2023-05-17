@@ -3,7 +3,6 @@ package com.swang.client;
 import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.CoapHandler;
 import org.eclipse.californium.core.CoapResponse;
-import org.eclipse.californium.core.Utils;
 import org.eclipse.californium.elements.exception.ConnectorException;
 
 import java.io.IOException;
