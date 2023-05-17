@@ -2,6 +2,7 @@ package com.swang.client;
 
 import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.CoapResponse;
+import org.eclipse.californium.core.Utils;
 import org.eclipse.californium.elements.exception.ConnectorException;
 
 import java.io.IOException;
@@ -17,7 +18,13 @@ public class HelloCoAPClient {
 
         // Print the response
         if (response != null) {
-            System.out.println("Response: " + response.getResponseText());
+            byte[] bytes = response.getPayload();
+
+            System.out.println(response.getCode());
+            System.out.println(response.getOptions());
+            System.out.println(response.getResponseText());
+            System.out.println("\nDETAILED RESPONSE:");
+            System.out.println(Utils.prettyPrint(response));
         } else {
             System.out.println("Request failed");
         }
